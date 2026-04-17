@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Yashwanth Portfolio</title>
+    <title>Palnati Yashwanth Reddy | Portfolio</title>
 
     <style>
         html {
@@ -10,40 +10,55 @@
 
         body {
             margin:0;
-            font-family:Arial;
-            background:linear-gradient(to right, black, purple);
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color:white;
             text-align:center;
-            transition:0.5s;
         }
 
-        /* LIGHT MODE */
-        .light-mode {
-            background:white;
-            color:black;
+        .container {
+            max-width: 900px;
+            margin: auto;
         }
 
-        /* FADE */
-        .fade-in {
-            animation: fadeIn 2s ease-in;
+        /* NAVBAR */
+        .navbar {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            padding:15px;
+            position:sticky;
+            top:0;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        a {
+            color:white;
+            margin:15px;
+            text-decoration:none;
         }
 
-        /* CARDS */
+        /* HERO */
+        .hero {
+            padding:60px 20px;
+        }
+
+        img {
+            border-radius:50%;
+            margin-top:20px;
+        }
+
+        /* GLASS CARD */
         .card {
-            transition: 0.3s;
             margin:20px;
             padding:20px;
             border-radius:15px;
-            background:rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition:0.3s;
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow:0 0 20px cyan;
         }
 
         /* BUTTON */
@@ -56,156 +71,119 @@
             box-shadow:0 0 15px cyan;
         }
 
-        /* NAV LINKS */
-        a {
-            color:white;
-            margin:15px;
-            text-decoration:none;
-        }
-
-        /* IMAGE */
-        img {
-            border-radius:50%;
-            margin-top:20px;
+        h2 {
+            color:cyan;
         }
 
     </style>
 </head>
 
-<body id="body">
+<body>
 
-    <!-- NAVBAR -->
-    <div style="background:black; padding:15px; position:sticky; top:0;">
+    <div class="navbar">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-
-        <!-- DARK MODE BUTTON -->
-        <button onclick="toggleMode()" style="float:right;">🌙</button>
     </div>
 
-    <!-- HERO -->
-    <div class="fade-in" style="padding:50px;">
-        <h1>Hi, I'm Palnati Yashwanth Reddy 👋</h1>
+    <div class="container">
 
-        <!-- TYPING TEXT -->
-        <h2 id="typing"></h2>
+        <!-- HERO -->
+        <div class="hero">
+            <h1>Hi, I'm Palnati Yashwanth Reddy 👋</h1>
+            <h2 id="typing"></h2>
 
-        <img src="photo.jpg.jpeg" width="150">
+            <img src="photo.jpg" width="150">
 
-        <br><br>
+            <br><br>
 
-        <button class="btn" onclick="document.getElementById('projects').scrollIntoView()">
-    View My Work
-</button>
-    </div>
-
-    <!-- ABOUT -->
-    <div id="about" class="fade-in" style="padding:30px;">
-        <h2 style="color:cyan;">About Me</h2>
-        <p>
-I am Palnati Yashwanth Reddy, a passionate student in AI & Web Development.
-I am currently building projects and learning new technologies.
-</p>
-    </div>
-
-    <!-- SKILLS -->
-    <div id="skills" class="fade-in" style="padding:30px;">
-        <h2 style="color:cyan;">Skills</h2>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>JavaScript</p>
-    </div>
-
-    <!-- PROJECTS -->
-    <div id="projects" class="fade-in" style="padding:30px;">
-        <h2 style="color:cyan;">Projects</h2>
-        <div class="card">
-    <img src="project1.jpg" width="200">
-    <h3>Attendance System</h3>
-    <p>Face recognition project</p>
-
-    <a href="https://github.com/yashwanthpal1502" target="_blank">
-        <button class="btn">View Project</button>
-    </a>
-</div>
-        <div class="card">
-    <img src="project2.jpg" width="200">
-    <h3>Student UI</h3>
-    <p>Frontend project</p>
-
-    <a href="https://github.com/yashwanthpal1502" target="_blank">
-        <button class="btn">View Project</button>
-    </a>
-</div>
-
-        <div class="card">
-            <img src="project1.jpg" width="200">
-            <h3>Attendance System</h3>
-            <p>Face recognition project</p>
+            <button class="btn" onclick="document.getElementById('projects').scrollIntoView()">
+                View My Work
+            </button>
         </div>
 
-        <div class="card">
-            <img src="project2.jpg" width="200">
-            <h3>Student UI</h3>
-            <p>Frontend project</p>
+        <!-- ABOUT -->
+        <div id="about" class="card">
+            <h2>About Me</h2>
+            <p>
+                I am Palnati Yashwanth Reddy, a passionate student in AI & Web Development.
+                I am building projects and improving my skills every day.
+            </p>
         </div>
+
+        <!-- SKILLS -->
+        <div id="skills" class="card">
+            <h2>Skills</h2>
+            <p>HTML • CSS • JavaScript • AI Basics</p>
+        </div>
+
+        <!-- PROJECTS -->
+        <div id="projects">
+            <h2>Projects</h2>
+
+            <div class="card">
+                <img src="project1.jpg" width="200">
+                <h3>Attendance System</h3>
+                <p>Face recognition project</p>
+
+                <a href="https://github.com/yashwanthpal1502" target="_blank">
+                    <button class="btn">View Project</button>
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="project2.jpg" width="200">
+                <h3>Student UI</h3>
+                <p>Frontend project</p>
+
+                <a href="https://github.com/yashwanthpal1502" target="_blank">
+                    <button class="btn">View Project</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contact" class="card">
+            <h2>Contact</h2>
+            <p>Email: yashwanthpalnati7093@gmail.com</p>
+            <p>Mobile: 8125261848</p>
+
+            <p>
+                <a href="https://github.com/yashwanthpal1502" target="_blank">GitHub</a>
+            </p>
+        </div>
+
     </div>
 
-    <!-- CONTACT -->
-    <div id="contact" class="fade-in" style="padding:30px;">
-        <h2 style="color:cyan;">Contact</h2>
-        <p>Email: yashwanthpalnati7093@gmail.com</p>
-        <p>MobileNo:8125261848 </p>
-        <p>
-    <a href="https://github.com/yashwanthpal1502" target="_blank">GitHub</a>
-</p>
-    </div>
-
-    <!-- FOOTER -->
-    <div style="padding:20px; background:black;">
-        <p>© 2026 Yashwanth Palnati </p>
-    </div>
-
-    <!-- JAVASCRIPT -->
+    <!-- JS -->
     <script>
-
-        // TYPING EFFECT
-        const text = ["Web Developer", "AI Learner", "Future Engineer 🚀"];
-        let i = 0;
-        let j = 0;
-        let currentText = "";
-        let isDeleting = false;
+        const text = ["Web Developer 💻", "AI Learner 🤖", "Future Engineer 🚀"];
+        let i = 0, j = 0, current = "", deleting = false;
 
         function type() {
-            currentText = text[i];
-            
-            if (!isDeleting) {
-                document.getElementById("typing").innerHTML = currentText.substring(0, j++);
-                if (j > currentText.length) {
-                    isDeleting = true;
+            current = text[i];
+            document.getElementById("typing").innerHTML = current.substring(0, j);
+
+            if (!deleting) {
+                j++;
+                if (j > current.length) {
+                    deleting = true;
                     setTimeout(type, 1000);
                     return;
                 }
             } else {
-                document.getElementById("typing").innerHTML = currentText.substring(0, j--);
+                j--;
                 if (j == 0) {
-                    isDeleting = false;
+                    deleting = false;
                     i = (i + 1) % text.length;
                 }
             }
 
-            setTimeout(type, isDeleting ? 50 : 100);
+            setTimeout(type, deleting ? 50 : 100);
         }
 
         type();
-
-        // DARK MODE
-        function toggleMode() {
-            document.body.classList.toggle("light-mode");
-        }
-
     </script>
 
 </body>
