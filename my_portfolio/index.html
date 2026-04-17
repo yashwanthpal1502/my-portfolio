@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yashwanth Portfolio</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin:0;
+            font-family:Arial;
+            background:linear-gradient(to right, black, purple);
+            color:white;
+            text-align:center;
+            transition:0.5s;
+        }
+
+        /* LIGHT MODE */
+        .light-mode {
+            background:white;
+            color:black;
+        }
+
+        /* FADE */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* CARDS */
+        .card {
+            transition: 0.3s;
+            margin:20px;
+            padding:20px;
+            border-radius:15px;
+            background:rgba(255,255,255,0.1);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* BUTTON */
+        .btn {
+            padding:12px 25px;
+            background:cyan;
+            border:none;
+            border-radius:25px;
+            cursor:pointer;
+            box-shadow:0 0 15px cyan;
+        }
+
+        /* NAV LINKS */
+        a {
+            color:white;
+            margin:15px;
+            text-decoration:none;
+        }
+
+        /* IMAGE */
+        img {
+            border-radius:50%;
+            margin-top:20px;
+        }
+
+    </style>
+</head>
+
+<body id="body">
+
+    <!-- NAVBAR -->
+    <div style="background:black; padding:15px; position:sticky; top:0;">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+        <!-- DARK MODE BUTTON -->
+        <button onclick="toggleMode()" style="float:right;">🌙</button>
+    </div>
+
+    <!-- HERO -->
+    <div class="fade-in" style="padding:50px;">
+        <h1>Hi, I'm Palnati Yashwanth Reddy 👋</h1>
+
+        <!-- TYPING TEXT -->
+        <h2 id="typing"></h2>
+
+        <img src="photo.jpg.jpeg" width="150">
+
+        <br><br>
+
+        <button class="btn">View My Work</button>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="fade-in" style="padding:30px;">
+        <h2 style="color:cyan;">About Me</h2>
+        <p>I am a student learning web development and AI.</p>
+    </div>
+
+    <!-- SKILLS -->
+    <div id="skills" class="fade-in" style="padding:30px;">
+        <h2 style="color:cyan;">Skills</h2>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="projects" class="fade-in" style="padding:30px;">
+        <h2 style="color:cyan;">Projects</h2>
+
+        <div class="card">
+            <img src="project1.jpg" width="200">
+            <h3>Attendance System</h3>
+            <p>Face recognition project</p>
+        </div>
+
+        <div class="card">
+            <img src="project2.jpg" width="200">
+            <h3>Student UI</h3>
+            <p>Frontend project</p>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="fade-in" style="padding:30px;">
+        <h2 style="color:cyan;">Contact</h2>
+        <p>Email: yashwanthpalnati7093@gmail.com</p
+        <p>MobileNo:8125261848 </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="padding:20px; background:black;">
+        <p>© 2026 Yashwanth Palnati </p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // TYPING EFFECT
+        const text = ["Web Developer", "AI Learner", "Future Engineer 🚀"];
+        let i = 0;
+        let j = 0;
+        let currentText = "";
+        let isDeleting = false;
+
+        function type() {
+            currentText = text[i];
+            
+            if (!isDeleting) {
+                document.getElementById("typing").innerHTML = currentText.substring(0, j++);
+                if (j > currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000);
+                    return;
+                }
+            } else {
+                document.getElementById("typing").innerHTML = currentText.substring(0, j--);
+                if (j == 0) {
+                    isDeleting = false;
+                    i = (i + 1) % text.length;
+                }
+            }
+
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+
+        type();
+
+        // DARK MODE
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+        }
+
+    </script>
+
+</body>
+</html>
